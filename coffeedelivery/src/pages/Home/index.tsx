@@ -1,3 +1,14 @@
+import { Banner } from './components/Banner'
+import { ContainerHome } from './styles'
+
 export function Home() {
-  return <h1>Home</h1>
+  return (
+    <>
+      <Banner />
+
+      <ContainerHome>
+        <h2>Nossos cafés</h2>
+      </ContainerHome>
+    </>
+  )
 }
