@@ -14,7 +14,7 @@ import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
 export function Banner() {
   return (
-    <ContainerBanner imageUrl={backgroundImagem}>
+    <ContainerBanner imageurl={backgroundImagem}>
       <ContentBanner>
         <LeftColumn>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>

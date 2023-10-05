@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 interface ContainerBannerProps {
-  imageUrl: string
+  imageurl: string
 }
 
 export const ContainerBanner = styled.div<ContainerBannerProps>`
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.imageurl});
   width: 100%;
   height: 544px;
   padding: 10rem;
@@ -67,7 +67,7 @@ interface ItemIconProps {
   bgcolor: keyof typeof BG_ICON_COLOR
 }
 
-export const ItemIcon = styled.div<ItemIconProps>`
+export const ItemIcon = styled.span<ItemIconProps>`
   padding: 0.5rem;
   border-radius: 999px;
   color: ${(props) => props.theme.white};
