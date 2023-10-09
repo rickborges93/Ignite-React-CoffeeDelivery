@@ -36,6 +36,29 @@ export const IconContainerBase = styled.div`
 export const IconContainer = styled(IconContainerBase)`
   color: ${(props) => props.theme['yellow-700']};
   background: ${(props) => props.theme['yellow-300']};
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: ${(props) => props.theme.white};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    top: 5px;
+    margin-left: 38px;
+
+    height: 1.25rem;
+    width: 1.25rem;
+
+    border-radius: 999px;
+    background: ${(props) => props.theme['yellow-700']};
+  }
 `
 
 export const LocaleContainer = styled(IconContainerBase)`

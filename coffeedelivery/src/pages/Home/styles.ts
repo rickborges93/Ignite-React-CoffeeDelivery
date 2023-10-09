@@ -11,3 +11,11 @@ export const ContainerHome = styled.section`
     line-height: 1.4;
   }
 `
+
+export const CoffeeCardList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  margin-top: 2rem;
+`

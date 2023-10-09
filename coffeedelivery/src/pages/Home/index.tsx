@@ -1,11 +1,11 @@
 import { Banner } from './components/Banner'
-import { ContainerHome } from './styles'
+import { CoffeeCardList, ContainerHome } from './styles'
 
 import { coffeeData } from '../../services/data'
+import { CoffeeCard } from './components/CoffeeCard'
 
 export function Home() {
   const coffeeList = coffeeData
-  console.log(coffeeList)
 
   return (
     <>
@@ -14,9 +14,11 @@ export function Home() {
       <ContainerHome>
         <h2>Nossos cafés</h2>
 
-        {coffeeList.map((coffee) => {
-          return <h3 key={coffee.id}>{coffee.name}</h3>
-        })}
+        <CoffeeCardList>
+          {coffeeList.map((coffee) => {
+            return <CoffeeCard key={coffee.id} data={coffee} />
+          })}
+        </CoffeeCardList>
       </ContainerHome>
     </>
   )

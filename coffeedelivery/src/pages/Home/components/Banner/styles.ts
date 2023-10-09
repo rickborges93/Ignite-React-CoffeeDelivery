@@ -7,7 +7,6 @@ interface ContainerBannerProps {
 export const ContainerBanner = styled.div<ContainerBannerProps>`
   background-image: url(${(props) => props.imageurl});
   width: 100%;
-  height: 544px;
   padding: 10rem;
 `
 
