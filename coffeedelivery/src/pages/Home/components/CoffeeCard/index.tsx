@@ -12,6 +12,8 @@ import { InputNumber } from '../../../../components/InputNumber'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../../../contexts/CartContext'
 
+import { toast } from 'react-toastify'
+
 interface CoffeeCardProps {
   data: CoffeeDataType
 }
@@ -22,12 +24,20 @@ export function CoffeeCard({ data }: CoffeeCardProps) {
   const price = data.price.toLocaleString('pt-br', { minimumFractionDigits: 2 })
 
   function handleAddNewItemToCart() {
-    const newItem = {
-      ...data,
-      quantity,
+    if (quantity > 0) {
+      const newItem = {
+        ...data,
+        quantity,
+      }
+
+      addNewItemToCart(newItem)
+      setQuantity(0)
+      toast.success(`${data.name} adicionado ao carrinho!`)
+    } else {
+      toast.warning(
+        `Escolha uma quantidade para adicionar ${data.name} ao carrinho.`,
+      )
     }
-    addNewItemToCart(newItem)
-    setQuantity(1)
   }
 
   function handleAddQuantity() {
