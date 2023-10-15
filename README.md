@@ -6,10 +6,11 @@ Rocketseat - Ignite ReactJS - Desafio 02 - Coffee Delivery
 
  ### 🛠 Tools:
    - Vite
-     - React - TypeScript
-      - useEffect, useReduce, ContextAPI
+     - React w/ TypeScript [useEffect, useReduce, ContextAPI]
    - styled-components
-   - uuid v4
+   - react-hook-form
+   - zod
+   - react-router-dom
    - Responsive Design
  
 ### ✔ You can:
