@@ -1,7 +1,13 @@
 import { ReactNode, createContext, useReducer } from 'react'
 import { CoffeeDataType } from '../services/data'
 import { cartReducer } from '../reducers/cart/reducer'
-import { addItemToCart, updateCartItem } from '../reducers/cart/actions'
+import {
+  addItemToCart,
+  removeItemFromCart,
+  removeQuantityFromCartItem,
+  updateCartItem,
+  clearAllItensCart,
+} from '../reducers/cart/actions'
 
 export interface CartItem extends CoffeeDataType {
   quantity: number
@@ -10,6 +16,8 @@ export interface CartItem extends CoffeeDataType {
 interface CartContextType {
   cartItens: CartItem[]
   addNewItemToCart: (coffee: CartItem) => void
+  removeQuantityFromItemCart: (coffee: CartItem, quantity: number) => void
+  clearCart: () => void
 }
 
 interface CartContextProviderProps {
@@ -34,8 +42,27 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
   }
 
+  function removeQuantityFromItemCart(coffee: CartItem, quantity: number) {
+    if (coffee.quantity > quantity) {
+      dispatch(removeQuantityFromCartItem(coffee, quantity))
+    } else {
+      dispatch(removeItemFromCart(coffee))
+    }
+  }
+
+  function clearCart() {
+    dispatch(clearAllItensCart())
+  }
+
   return (
-    <CartContext.Provider value={{ cartItens, addNewItemToCart }}>
+    <CartContext.Provider
+      value={{
+        cartItens,
+        addNewItemToCart,
+        removeQuantityFromItemCart,
+        clearCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   )

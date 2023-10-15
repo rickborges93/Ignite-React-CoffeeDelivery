@@ -13,6 +13,12 @@ export const HeaderContainer = styled.div`
     height: auto;
     width: 85px;
   }
+
+  a:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
 `
 
 export const RightContent = styled.div`

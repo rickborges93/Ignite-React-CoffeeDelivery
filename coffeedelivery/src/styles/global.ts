@@ -23,4 +23,15 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         font-size: 1rem;
     }
+
+    .Toastify__toast-theme--light.Toastify__toast--success,  
+    .Toastify__toast-theme--light.Toastify__toast--warning {
+        color: ${(props) => props.theme['base-title']};
+
+        font-family: 'Baloo 2',sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 700;
+        word-wrap: break-word;
+    }
 `
